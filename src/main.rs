@@ -94,7 +94,7 @@ fn main() {
             match do_meta_command(&input_buffer) {
                 MetaCommandResult::MetaCommandSuccess => {},
                 MetaCommandResult::MetaCommandUnrecognizedCommand => {
-                    println!("Unrecognized keyword at start of '{}'.", input_buffer.buffer);
+                    println!("Unrecognized command '{}'.", input_buffer.buffer);
                 },
             }
         }
