@@ -12,7 +12,7 @@ fn print_prompt() {
 }
 
 fn read_input(mut input_buffer: InputBuffer) -> InputBuffer {
-    input_buffer.buffer = String::from("");
+    input_buffer.buffer = String::new();
     match io::stdin().read_line(&mut input_buffer.buffer) {
         Ok(bytes_read) => {
             // Ignore trailing newline
@@ -20,7 +20,7 @@ fn read_input(mut input_buffer: InputBuffer) -> InputBuffer {
             input_buffer.buffer.pop();
         }
         Err(_error) => {
-            println!("Error reading input.\n");
+            println!("Error reading input.");
             std::process::exit(1);
         }
     }
@@ -29,7 +29,7 @@ fn read_input(mut input_buffer: InputBuffer) -> InputBuffer {
 
 fn main() {
     let mut input_buffer = InputBuffer {
-        buffer: String::from(""),
+        buffer: String::new(),
         input_length: 0,
     };
 
